@@ -27,7 +27,7 @@ h3 {
 }
 
 /* left col */
-.manoj {
+.my-image {
   height: 70px;
   width: 70px;
   border-radius: 50%;
@@ -38,11 +38,11 @@ h3 {
   color: #333333;
 }
 
-.manoj img {
+.my-image img {
   width: 70px;
 }
 
-.sidebar span {
+.my-name {
   display: inline-block;
   margin-left: 5px;
   font-size: 17px;
