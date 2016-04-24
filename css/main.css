@@ -27,7 +27,7 @@ h3 {
 }
 
 /* left col */
-#manoj {
+.manoj {
     height: 70px;
     width: 70px;
     border-radius: 50%;
@@ -35,9 +35,10 @@ h3 {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
+    color: #333333;
 }
 
-    #manoj > img {
+    .manoj > img {
         width: 70px;
     }
 
