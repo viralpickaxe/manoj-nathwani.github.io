@@ -1,0 +1,31 @@
+---
+layout: blog
+---
+
+{% assign filtered_posts = site.array %}
+{% if page.name == "index.html" %}
+  {% for post in site.posts %}
+    {% assign filtered_posts = filtered_posts | push: post %}
+  {% endfor %}
+{% else %}
+  {% for post in site.posts %}
+    {% if post.category == page.category %}
+      {% assign filtered_posts = filtered_posts | push: post %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% for post in filtered_posts %}
+{% cycle 'add row' : '<div class="row">', nil %}
+<div class="col-md-6">
+  <div class="thumbnail">
+    <a href="{{ post.url }}"><img src="{{ post.image }}"></a>
+    <div class="caption">
+      <h4>{{ post.title }}</h4>
+      <p>{{ post.description }}</p>
+      <a href="{{ post.url }}"><button type="button" class="btn btn-default">Read more</button></a>
+    </div>
+  </div>
+</div>
+{% cycle 'end row' : nil, '</div>' %}
+{% endfor %}

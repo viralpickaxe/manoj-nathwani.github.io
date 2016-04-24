@@ -1,0 +1,252 @@
+---
+layout: article
+category: hackathons
+date: 2014-09-20
+title: "Dropbox Hackathon"
+image: https://farm6.staticflickr.com/5580/15321009902_7328b4a691.jpg
+description: "What better way to spend a weekend than to build something awesome in the company of people who love to build stuff as well. The goal of the hack weekend is to have fun and try something new."
+---
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/pkSbt9" target="_blank"><img src="https://farm6.staticflickr.com/5580/15321009902_7328b4a691_b.jpg" /></a>
+    <br /><br />
+    <a href="https://flic.kr/p/p4oZnu" target="_blank"><img src="https://farm6.staticflickr.com/5593/15134640610_e1eae31ffd_b.jpg" /></a>
+    <br /><br />
+    <a href="https://flic.kr/p/pkTRYx" target="_blank"><img src="https://farm4.staticflickr.com/3861/15321337915_cfb076ff37_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <p>Last weekend I attended <a href="http://2014.hackference.co.uk/" target="_blank">Hackference</a>’s weekend hackathon which has to be one of the best hackathon’s I’ve ever attended! The message was clear “have fun and try something new” which was refreshing since the last few hackathons have really felt very sponsor-focused in London. There really isn’t enough of a focus on developer-heavy hackathons for simply learning new things and showing off what you’ve managed to make in 24-hours.</p>
+    <p>It was the first time I travelled up to Birmingham for a hackathon and it really was worth it; as always I met plenty of amazingly smart people, worked together with them and built a pretty-much-fully-working hack within 24-hours. I turned up to the event already knowing <a href="https://twitter.com/s_ad3n" target="_blank">Saed</a> and <a href="https://twitter.com/siddvee" target="_blank">Siddharth</a> and joined forces with <a href="https://twitter.com/mikehoyio" target="_blank">Mike</a> and <a href="https://twitter.com/dizzeehaskell" target="_blank">Laurence</a> who we happened to be sharing a table with.</p>
+    <p>Our goal was very ambitious; it was to build a <a href="https://www.youtube.com/watch?v=qybUFnY7Y8w" target="_blank">Rube Goldberg Machine</a> of technology using as many APIs, cloud platforms and programming languages as possible to pass through a keyword which we set. The previous world record was 15 and we wanted to beat it.</p>
+    <p>Seeing as we all came from radically different developer-backgrounds we decided to split up and work on a few things each and figure out how to link them up later on which worked out perfectly fine surprisingly!</p>
+    <p>We decided to prioritize learning over winning at the hackathon; so we all explored ideas which would give us excuses to learn and build something we had always wanted to, but never had the chance.</p>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <h1><b>Our Rube Goldberg Machine</b></h1>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12 table-responsive">
+    <table class="table">
+      <tr><th>Stage</th><th>Person</th><th>Platform</th><th>Language</th><th>Event</th></tr>
+      <tr><td>01</td><td class="bg-info">Saed</td><td>Android phone</td><td>Java</td><td><a href="http://nfcring.com/" target="_blank">NFC Ring</a> sends user to URL</td></tr>
+      <tr><td>02</td><td class="bg-info">Saed</td><td>OpenShift</td><td>PHP</td><td>Webpage takes input of keyword and emails it via <a href="http://sendgrid.com/" target="_blank">SendGrid</a></td></tr>
+      <tr><td>03</td><td class="bg-info">Saed</td><td>OpenShift</td><td>PHP</td><td><a href="http://context.io/" target=" _blank">Context.io</a> reads email and posts keyword as a tweet</td></tr>
+      <tr><td>04</td><td class="bg-warning">Mike</td><td>Archlinux</td><td>Python</td><td>Tweet is detected and sends the keyword to systm logs</td></tr>
+      <tr><td>05</td><td class="bg-warning">Mike</td><td>ArchLinux</td><td>node.js</td><td>Detects log and saves keyword to file</td></tr>
+      <tr><td>06</td><td class="bg-warning">Mike</td><td>Archlinux</td><td>Bash</td><td>File change detected, starts cluster of 3 VMs with a shared directory</td></tr>
+      <tr><td>07</td><td class="bg-warning">Mike</td><td>coreOS</td><td>Bash</td><td>Keyword is read from network and Sent to <a href="https://coreos.com/using-coreos/etcd/" target="_blank">etcd</a></td></tr>
+      <tr><td>08</td><td class="bg-warning">Mike</td><td>coreOS</td><td>Bash</td><td>Keyword is recieved from etcd store, instructs VM3 to http keyword</td></tr>
+      <tr><td>09</td><td class="bg-success">Manoj</td><td>Microsoft Azure</td><td>.NET</td><td>Keyword sent to Central US Data Center</td></tr>
+      <tr><td>10</td><td class="bg-success">Manoj</td><td>Microsoft Azure</td><td>.NET</td><td>Keyword sent to East US Data Center</td></tr>
+      <tr><td>11</td><td class="bg-success">Manoj</td><td>Microsoft Azure</td><td>.NET</td><td>Keyword sent to North Central US Data Center</td></tr>
+      <tr><td>12</td><td class="bg-success">Manoj</td><td>Microsoft Azure</td><td>.NET</td><td>Keyword sent to South Central US Data Center</td></tr>
+      <tr><td>13</td><td class="bg-success">Manoj</td><td>Microsoft Azure</td><td>.NET</td><td>Keyword sent to West US Data Center</td></tr>
+      <tr><td>14</td><td class="bg-success">Manoj</td><td>Microsoft Azure</td><td>.NET</td><td>Keyword sent to North Europe Data Center</td></tr>
+      <tr><td>15</td><td class="bg-success">Manoj</td><td>Microsoft Azure</td><td>.NET</td><td>Keyword sent to West Europe Data Center</td></tr>
+      <tr><td>16</td><td class="bg-danger">Lawrence</td><td>Heroku</td><td>Haskell</td><td>Keyword Encrypted with military level AES-32 encryption</td></tr>
+      <tr><td>17</td><td class="bg-success">Manoj</td><td>Microsoft Azure</td><td>.NET</td><td>Encrypted keyword sent to Brazil South Data Center</td></tr>
+      <tr><td>18</td><td class="bg-success">Manoj</td><td>Local PC</td><td><a href="https://github.com/sinker/tacofancy" target="_blank">tacofancy</a></td><td>Encrypted keyword is encrypted into a taco recipe</td></tr>
+      <tr><td>19</td><td class="bg-success">Manoj</td><td>Microsoft Azure</td><td>.NET</td><td>Taco recipe for kncrypted keyword sent to East Asia Data Center</td></tr>
+      <tr><td>20</td><td class="bg-success">Manoj</td><td>Microsoft Azure</td><td>.NET</td><td>Taco recipe for kncrypted keyword sent to Southeast Asia Data Center</td></tr>
+      <tr><td>21</td><td class="bg-success">Manoj</td><td>Microsoft Azure</td><td>.NET</td><td>Taco recipe for kncrypted keyword sent to Japan East Data Center</td></tr>
+      <tr><td>22</td><td class="bg-success">Manoj</td><td>Microsoft Azure</td><td>.NET</td><td>Taco recipe for kncrypted keyword sent to Japan West Data Center</td></tr>
+      <tr><td>23</td><td class="bg-success">Manoj</td><td>Local PC</td><td><a href="https://github.com/sinker/tacofancy" target="_blank">tacofancy</a></td><td>Taco recipe for kncrypted keyword is decrypted from taco recipe</td></tr>
+      <tr><td>24</td><td class="bg-danger">Lawrence</td><td>Heroku</td><td>Haskell</td><td>kncrypted keyword is decrypted from AES-32</td></tr>
+      <tr><td>25</td><td class="bg-success">Manoj</td><td>Microsoft Azure</td><td>.NET</td><td>Keyword is shown on the screen... <b>and the crowed goes wild!</b></td></tr>
+      <tr><td>26</td><td class="bg-success">Manoj</td><td>Microsoft Azure</td><td>.NET</td><td>Keyword is texted via <a href="https://www.twilio.com" target="_blank">Twilio</a> to my mobile</td></tr>
+    </table>
+    <p class="well" style="padding:10px;">We even managed to incorporate a hardware hack thanks to Siddharth who programed a LED display to show the stage number as the machine progressed through each level.</p>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <h1><b>We Won!</b><small> with our almost-nearly-fully-working hack</small></h1>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/p5zESn" target="_blank"><img src="https://farm3.staticflickr.com/2944/15148041097_385e663db8_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/pn37tj" target="_blank"><img src="https://farm4.staticflickr.com/3858/15334264072_2de4e4d504_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pn37y9" target="_blank"><img src="https://farm4.staticflickr.com/3897/15334264352_5329ca4d2b_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <p class="well info">We also got a really nice mention from <a href="https://twitter.com/SteveCorbettHN" target="_blank">Steve Corbet</a> who was the main sponsor at the event in his blog which can be found <a href="http://stevecorbetthn.tumblr.com/post/98472361596/hackference-2014-talks-tech-and-tired-people" target="_blank">here</a>.</p>
+    <a href="https://flic.kr/p/p9VSB1" target="_blank"><img src="https://farm4.staticflickr.com/3839/15197248798_096f8aab5e_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <h1><b>Gallery</b></h1>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/piRNN1" target="_blank"><img src="https://farm6.staticflickr.com/5596/15298303996_29a366ca19_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/p4pxey" target="_blank"><img src="https://farm6.staticflickr.com/5557/15134747798_8a0548042f_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/pkBJq4" target="_blank"><img src="https://farm4.staticflickr.com/3897/15318190691_14ab80765d_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/p4pNiF" target="_blank"><img src="https://farm6.staticflickr.com/5589/15134798497_0c17b4e417_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/pkSbFU" target="_blank"><img src="https://farm4.staticflickr.com/3857/15321010642_0646f8c724_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/pkSbHC" target="_blank"><img src="https://farm4.staticflickr.com/3901/15321010742_63634cdbdc_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/pkSbCN" target="_blank"><img src="https://farm6.staticflickr.com/5592/15321010462_d07a7114e5_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/piRNv7" target="_blank"><img src="https://farm4.staticflickr.com/3874/15298303016_f706aa3826_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/pkSbt9" target="_blank"><img src="https://farm6.staticflickr.com/5580/15321009902_7328b4a691_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/p4oKcp" target="_blank"><img src="https://farm4.staticflickr.com/3877/15134592929_480c5fccb4_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/p4pwQ7" target="_blank"><img src="https://farm4.staticflickr.com/3913/15134746438_86f7809a9b_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/pkSbn7" target="_blank"><img src="https://farm4.staticflickr.com/3850/15321009552_36bab2e076_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/p4pwGb" target="_blank"><img src="https://farm6.staticflickr.com/5559/15134745978_a163291bc2_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/pkTRYx" target="_blank"><img src="https://farm4.staticflickr.com/3861/15321337915_cfb076ff37_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/p4oZnu" target="_blank"><img src="https://farm6.staticflickr.com/5593/15134640610_e1eae31ffd_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/p4pNEc" target="_blank"><img src="https://farm4.staticflickr.com/3886/15134799687_67d86f4397_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/piRNVA" target="_blank"><img src="https://farm4.staticflickr.com/3879/15298304436_14540021f5_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/piRNWh" target="_blank"><img src="https://farm4.staticflickr.com/3841/15298304476_1c32435c16_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/p4oZiw" target="_blank"><img src="https://farm4.staticflickr.com/3870/15134640380_c6e9419073_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pn4G4g" target="_blank"><img src="https://farm4.staticflickr.com/3864/15334572165_0ab6aea53f_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/p5yKK3" target="_blank"><img src="https://farm4.staticflickr.com/3875/15147862380_784711f068_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/p5zETz" target="_blank"><img src="https://farm3.staticflickr.com/2943/15148041167_97eb6a8fd1_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pmMsZt" target="_blank"><img src="https://farm4.staticflickr.com/3884/15331406421_d1998133c1_b.jpg" /></a>
+  </div>
+</div>

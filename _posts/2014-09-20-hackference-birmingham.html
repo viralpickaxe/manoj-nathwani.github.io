@@ -1,0 +1,133 @@
+---
+layout: article
+category: hackathons
+date: 2015-01-24
+title: "Dropbox Hackathon"
+image: https://farm8.staticflickr.com/7422/16371355765_b8893fb9b8.jpg
+description: "Dropbox’s first London Hackathon"
+---
+<div class="row">
+  <div class="col-md-12">
+    <p>This weekend I attended <a href="https://www.dropbox.com/developers/blog/117/london-dropbox-hackathon" target="_blank">Dropbox’s London hackathon</a> which was a great way to get introduced to their APIs and get a feel for the kind of people who work there. The venue was jam-packed with over 120 hackers and the pretentions kicked off with some really interesting demos using the Dropbox API to <a href="http://english2english.herokuapp.com/" target="_blank">translate American English to British English</a> and using their new <a href="https://www.dropbox.com/developers/webhooks/docs" target="_blank">webhooks API</a>. Unfortunately Dropbox got a bit unlucky with the venue as it was quite small for the amount of people and the lighting really made it feel more like a nightclub rather than a hackathon, giving all screens a pretty horrible yellow tint. The venue also was not open all night which is unheard of from a hackathon, but luckily we had our offices to go back to during the night to continue hacking.</p>
+    <p>The Dropbox team however were fantastic and were always happy to jump off their seats to lend a hand when needed. Their APIs are solid and well documented which is great for hackathon environments and a pure front-end <a href="https://www.dropbox.com/developers/dropins" target="_blank">JavaScript API</a> is always a winner for beginners. I personally learnt about the Dropbox <a href="https://www.dropbox.com/developers/core" target="_blank">Core API</a> which allows you to build applications which has access to a dedicated folder Dropbox generates for you. This is great for using Dropbox as storage for your apps without users surrendering all their data to you.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://www.flickr.com/photos/manoj-nathwani/15751388353" target="_blank"><img src="https://farm8.staticflickr.com/7368/15751388353_b84b6ea83c_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://www.flickr.com/photos/manoj-nathwani/16185479437" target="_blank"><img src="https://farm8.staticflickr.com/7311/16185479437_daba4864bb_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+  </div>
+</div>
+
+<h1>Our SD card hack</h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <p>Our hack was to build a way of automatically syncing pictures from a DSLR camera to Dropbox which would allow photographers at events to live-tweet the event without carrying around a laptop and running between taking pictures and uploading them.</p>
+    <p>This also solves the problem of storage space as we would no longer be eating up the limited memory of SD cards or backing up pictures altogether. This is a recent problem I have found after buying an DSLR camera and taking them to events; tweeting them live isn't an option and it’s days before I take time out to upload them to flickr.</p>
+  </div>
+  <div class="col-md-6">
+    <a href="https://www.flickr.com/photos/manoj-nathwani/16369622181" target="_blank"><img src="https://farm8.staticflickr.com/7307/16369622181_63ecd4c000_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <p><a href="http://siddv.net/" target="_blank">Sidd</a> and <a href="http://uzupan.com/" target="_blank">Uro&#353;</a> worked on the mechanics of building a SD card which could be used by two devices at the same time. The solution was to strip out two SD cards and insert one end to the camera and the other to the Raspberry Pi. We then had another SD card in the middle which was used as the actual storage of the images.</p>
+    <p>Unfortunately this idea did not work as it is not possible to have 2 devices talking to the same SD card at the same time. However a workaround was to have both devices reading and writing data to the bridged SD card on their own, so turning off the camera would allow the Raspberry Pi to access the SD card where it would upload all the images to Dropbox.</p>
+  </div>
+  <div class="col-md-6">
+    <a href="https://www.flickr.com/photos/manoj-nathwani/16345356596" target="_blank"><img src="https://farm8.staticflickr.com/7322/16345356596_f8a413030e_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<h1>Adding the Raspberry Pi</h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <p>While the SD card part of our hack was being worked on I was learning about running Bash and Python scripts on the Raspberry Pi and installing a headless version of Dropbox onto the device to upload the images through the Dropbox Core API.</p>
+    <p>I built an app through Dropbox which gave me a folder for API access to read and write to and followed some brilliant <a href="http://raspi.tv/2013/how-to-use-dropbox-with-raspberry-pi#comment-54668" target="_blank">instructions</a> I found on programmatically uploading the images to Dropbox.</p>
+    <p>This was the first time I had ever used Bash scripts or wrote Python on the Raspberry Pi, so I learnt a lot! Luckily I had a borrowed Wi-Fi dongle from the <a href="http://www.kano.me/" target="_blank">Kano kit</a> which stores network settings onto the device magically and remembers them even when you connect them to a brand new Raspberry Pi, so setting up the Wi-Fi on my Pi was easy too.</p>
+    <p>Now that images were being synced to Dropbox we needed to prove it in a way which was a lot more interesting than simply showing a folding being populated in a file explorer. This is where we integrated <a href="https://ifttt.com/" target="_blank">IFTTT</a> which was automatically posting all new files in Dropbox to twitter through a new account we set up under <a href="https://twitter.com/DropboxLive" target="_blank">DropboxLive</a>. Eventually we were sending too many pictures for Twitter to accept and <a href="http://uk.linkedin.com/in/usmohammad" target="_blank">Usman</a> ended up creating another twitter account called <a href="https://twitter.com/DropboxLive2" target="_blank">DropboxLive2</a> to use moving forward and set a timer to stop spamming Twitter.</p>
+  </div>
+  <div class="col-md-6">
+    <a href="https://www.flickr.com/photos/manoj-nathwani/16370443002" target="_blank"><img src="https://farm9.staticflickr.com/8609/16370443002_2dffca62a1_b.jpg" /></a>
+    <br /><br />
+    <a href="https://www.flickr.com/photos/manoj-nathwani/16185104859" target="_blank"><img src="https://farm8.staticflickr.com/7460/16185104859_ba5d979692_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<h1>Winning</h1>
+
+<div class="row">
+  <div class="col-md-12">
+    <p>To our amazement we managed to win the ‘<b>most impressive technical hack’</b> achievement which was quite something as we were up against a lot of amazing hacks such as a team who managed to build an entire 3D scanner which uploaded the modals to Dropbox. During our demonstration we were using the camera to show it syncing images to Dropbox and tweeting them out automatically which was a really nice seeing working live on stage! Definitely one of our coolest hacks.</p>
+    <a href="https://www.flickr.com/photos/manoj-nathwani/15752623483" target="_blank"><img src="https://farm8.staticflickr.com/7360/15752623483_9ec51b0bee_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <center>
+      <blockquote class="twitter-tweet" lang="en"><p>.<a href="https://twitter.com/Dropbox">@Dropbox</a> live cam from <a href="https://twitter.com/hashtag/DBXHackathon?src=hash">#DBXHackathon</a> on January 24, 2015 at 03:28PM :D powered by <a href="https://twitter.com/dropboxapi">@Dropboxapi</a> <a href="http://t.co/9NtGLZ67P3">pic.twitter.com/9NtGLZ67P3</a></p>&mdash; Dropbox Live (@DropboxLive) <a href="https://twitter.com/DropboxLive/status/559009920172187648">January 24, 2015</a></blockquote>
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </center>
+  </div>
+  <div class="col-md-6">
+    <center>
+      <blockquote class="twitter-tweet" lang="en"><p>.<a href="https://twitter.com/Dropbox">@Dropbox</a> live cam from <a href="https://twitter.com/hashtag/DBXHackathon?src=hash">#DBXHackathon</a> on January 24, 2015 at 03:03PM :D powered by <a href="https://twitter.com/dropboxapi">@Dropboxapi</a> <a href="http://t.co/Y40FjMfOW7">pic.twitter.com/Y40FjMfOW7</a></p>&mdash; Dropbox Live (@DropboxLive) <a href="https://twitter.com/DropboxLive/status/559003733263392769">January 24, 2015</a></blockquote>
+    </center>
+  </div>
+  <div class="col-md-6">
+    <center>
+      <blockquote class="twitter-tweet" lang="en"><p>.<a href="https://twitter.com/Dropbox">@Dropbox</a> live cam from <a href="https://twitter.com/hashtag/DBXHackathon?src=hash">#DBXHackathon</a> on January 24, 2015 at 03:05PM :D powered by <a href="https://twitter.com/dropboxapi">@Dropboxapi</a> <a href="http://t.co/nwPQ1UEZQ3">pic.twitter.com/nwPQ1UEZQ3</a></p>&mdash; Dropbox Live (@DropboxLive) <a href="https://twitter.com/DropboxLive/status/559004109450530817">January 24, 2015</a></blockquote>
+    </center>
+  </div>
+  <div class="col-md-6">
+    <center>
+      <blockquote class="twitter-tweet" lang="en"><p>.<a href="https://twitter.com/Dropbox">@Dropbox</a> live cam from <a href="https://twitter.com/hashtag/DBXHackathon?src=hash">#DBXHackathon</a> on January 24, 2015 at 05:56PM :D powered by <a href="https://twitter.com/dropboxapi">@Dropboxapi</a> <a href="http://t.co/sL0uM4kvvb">pic.twitter.com/sL0uM4kvvb</a></p>&mdash; Dropbox Live 2 (@DropboxLive2) <a href="https://twitter.com/DropboxLive2/status/559047129445203968">January 24, 2015</a></blockquote>
+    </center>
+  </div>
+  <div class="col-md-6">
+    <center>
+      <blockquote class="twitter-tweet" lang="en"><p>.<a href="https://twitter.com/Dropbox">@Dropbox</a> live cam from <a href="https://twitter.com/hashtag/DBXHackathon?src=hash">#DBXHackathon</a> on January 24, 2015 at 05:57PM :D powered by <a href="https://twitter.com/dropboxapi">@Dropboxapi</a> <a href="http://t.co/5JIiBC40Sw">pic.twitter.com/5JIiBC40Sw</a></p>&mdash; Dropbox Live 2 (@DropboxLive2) <a href="https://twitter.com/DropboxLive2/status/559048712274849792">January 24, 2015</a></blockquote>
+    </center>
+  </div>
+  <div class="col-md-6">
+    <center>
+      <blockquote class="twitter-tweet" lang="en"><p>.<a href="https://twitter.com/Dropbox">@Dropbox</a> live cam from <a href="https://twitter.com/hashtag/DBXHackathon?src=hash">#DBXHackathon</a> on January 24, 2015 at 05:55PM :D powered by <a href="https://twitter.com/dropboxapi">@Dropboxapi</a> <a href="http://t.co/4tyA7JTe8Z">pic.twitter.com/4tyA7JTe8Z</a></p>&mdash; Dropbox Live 2 (@DropboxLive2) <a href="https://twitter.com/DropboxLive2/status/559047109718990848">January 24, 2015</a></blockquote>
+    </center>
+  </div>
+  <div class="col-md-6">
+    <a href="https://www.flickr.com/photos/manoj-nathwani/16185447517" target="_blank"><img src="https://farm8.staticflickr.com/7369/16185447517_05a90283ae_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://www.flickr.com/photos/manoj-nathwani/16183939320" target="_blank"><img src="https://farm9.staticflickr.com/8652/16183939320_41ef2c402d_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://www.flickr.com/photos/manoj-nathwani/16186648657" target="_blank"><img src="https://farm8.staticflickr.com/7418/16186648657_f20194f02d_o.png"></a>
+  </div>
+</div>

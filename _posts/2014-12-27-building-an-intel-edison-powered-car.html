@@ -1,0 +1,85 @@
+---
+layout: article
+category: projects
+date: 2014-12-27
+title: "Building an Intel Edison powered car"
+image: https://farm8.staticflickr.com/7551/15935563720_928fe134a7.jpg
+description: "How I built a WiFi controlled car built with the Intel Edison"
+---
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/qhaVUC" target="_blank"><img src="https://farm8.staticflickr.com/7551/15935563720_928fe134a7_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <p>This Christmas I got a really neat <a href="http://www.amazon.co.uk/dp/B00NLOK0RK" target="_blank">Arduino Car Kit</a> off Amazon which I jumped on straight away to start building. I’ve tried building a car exactly like this in the past however it was simply a card board box with two motors which didn’t even have enough power to push itself with an Arduino Uno in it, so this kit was exactly what I needed. In particular were the motor driver and battery box which when used together could power motors to carry a surprising amount of weight!</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/qwZrfQ" target="_blank"><img src="https://farm8.staticflickr.com/7535/16103263656_b5f4206968_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/qwZrAj" target="_blank"><img src="https://farm9.staticflickr.com/8666/16103264786_c7676a781a_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <p>To start off with I used an Arduino Uno to test that everything was working with the L298N Motor Driver which is quite self-explanatory and makes life very easy for programming the motors. You can find instructions on how to use it <a href="http://www.instructables.com/id/Arduino-Modules-L298N-Dual-H-Bridge-Motor-Controll/" target="_blank">here</a>.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/qhhbHc" target="_blank"><img src="https://farm9.staticflickr.com/8593/15936784189_4238f5c3be_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <p>My next step was to swap out the Arduino for an Intel Edison which would allow me to use its on-board WiFi to host a webserver which I could talk to, to control the car. I loaded up the <a href="https://github.com/arduino/Arduino/blob/master/libraries/WiFi/examples/SimpleWebServerWiFi/SimpleWebServerWiFi.ino" target="_blank">SimpleWebServerWiFi</a> sample code and made it appropriate for controlling my car as well as writing up a the HTML and Javascript needed to make a live website which you could use your keyboard to send commands to the car with. I also added an LED which lights up once the webserver is live and ready for instructions as well as a horn which was made using a buzzer.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/qyy2eB" target="_blank"><img src="https://farm8.staticflickr.com/7548/16120938041_be5df7bd92_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <p>An interesting problem which occurred was that the Lumia 1020 phone I was using as the camera was incredibly heavy and was toppling the car whenever it reversed, after hours of re-engineering and shifting around the centre of gravity I finally fixed it by moving the power charger (the cylinder) to the very back of the car and building a bumper out of Meccano and adding it to the front which would stop it tilting. I also managed to strap the phone very tightly to the car which worked out very well and works by having a skype call running with my laptop via WiFi.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/qyE6Xy" target="_blank"><img src="https://farm8.staticflickr.com/7581/16122124602_6ef874c108_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <p>I also made use of a breadboard to avoid wasting power by having the motor controller continuously connected, the Edison can also be turned off by disconnecting it from the power charger. All-in-all this was a great project which lasted a good three days over the Christmas break. View the code below.</p>
+  </div>
+  <div class="col-md-12 text-center">
+    <div class="btn-group">
+      <a href="https://github.com/Manoj-nathwani/Arduino/blob/master/libraries/WiFi/examples/SimpleWebServerWiFi/SimpleWebServerWiFi.ino" target="_target"><button type="button" class="btn btn-lg btn-default"><i class="fa fa-github fa-lg"></i> View Code on GitHub</button></a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,343 @@
+---
+layout: article
+category: hackathons
+date: 2014-10-04
+title: "MLH Launch"
+image: https://farm3.staticflickr.com/2943/15264506838_f29dea8c98.jpg
+description: "MLH Launch Hack is the inaugural hackathon to kick off the first ever student hackathon season in the UK."
+---
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfSA5o" target="_blank"><img src="https://farm3.staticflickr.com/2943/15264506838_f29dea8c98_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-7">
+    <p>This weekend I went to an absolutely amazing hackathon at <a href="http://www.bloomberg.com/" target="_blank">Bloomberg</a>’s offices in London. Organised by <a href="http://mlh.io/" target="_blank">Major League Hacking</a>, the event focused on learning something interesting and showing it off after 24 hours of hacking. This is exactly what the UK needs! I’ve moaned recently about not enough hackathons simply existing to allow developers to try out something new and focus on learning, not helping large companies solve their problems.</p>
+    <p>The venue was spacious for the 200+ people who attended and it was clearly organised well by MLH as there was plenty of sponsors, swag, WIFI bandwidth and most importantly - food!</p>
+    <p>The event also had a great mix of ages; from students as young as 13 attending their first hackathon and building some really great hacks.</p>
+    <p>I arrived at the event with my new <a href="http://arduino.cc/en/Main/ArduinoStarterKit" target="_blank">Arduino Starter Kit</a> which I recently bought, ready to take my first step into the hardware world. I’ve been wanting to try something completely new and after recently seeing <a href="https://twitter.com/siddvee" target="_blank">Siddharth</a> create our Arduino hack at the Tesco Hackathon, I wanted to give it a try myself.</p>
+    <p>My goal was pretty simple; I wanted to buy a cheap robot from Maplin, build it and then figure out how to invoke it using my Arduino board controlled by my laptop.</p>
+    <p>Little did I know the <a href="http://www.maplin.co.uk/p/ir-remote-control-robot-beetle-kit-a00jt" target="_blank">‘simple’ robot I bought</a> was actually a pretty serious kit which took most of Saturday to build, including running back to Maplin in the rain to pick up super glue as the wheels wouldn’t stick on!</p>
+  </div>
+  <div class="col-md-5">
+    <a href="https://flic.kr/p/pxke9j" target="_blank"><img src="https://farm4.staticflickr.com/3932/15450768382_883b4768d3_b.jpg"  /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>Building My Robot</h1>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfSAjS" target="_blank"><img src="https://farm6.staticflickr.com/5600/15264507678_59e34e7242_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <p>It was late afternoon by the time I finished building the main robot which was when the real work started! I had to figure out a way of somehow controlling it using my laptop.</p>
+    <p>So far my Arduino knowledge allowed me to simply upload sample code to make LEDs blink, I was confident that I could use the same code to kick off motors to move. It sounded simple at the time...</p>
+  </div>
+  <div class="col-md-6">
+    <p>My original plan was to hack the IR controller and use that to control the robot wirelessly which didn’t work out thanks to the controller being too low powered to work at any usable range.</p>
+    <p>I spent a VERY long time trying to do this and managed to get my Arduino to talk to the controller at around 4am however the range simply wasn’t usable.</p>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pxkgQG" target="_blank"><img src="https://farm3.staticflickr.com/2941/15450777452_06f8a36493_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <p>After taking a powernap I decided to give it another shot, I scrapped the idea of using the controller and mounted the Arduino onto the robot itself. This was quite entertaining; poking wires at the main circuit board to see what parts of the robot moved. I soon realised that the motors on the robot needed a lot more power to run off as they each had several gears and three wheels working off them.</p>
+  </div>
+  <div class="col-md-6">
+    <p>This is where things suddenly started to work out... I managed to borrow a battery pack off <a href="https://twitter.com/Lonneybat6" target="_blank">Simon</a> (who must be noted as super useful in giving me a hand with all of this) and used my Arduino Kit’s book to figure out that I could connect up a transistor to add additional power supplies. I linked each motor to a 9V battery and to my amazement it worked!</p>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pxkgCs" target="_blank"><img src="https://farm3.staticflickr.com/2943/15450776742_10cc5833a6_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <p>The programming-side wasn't too hard now; all I had to do was write an Arduino application in C to read serial data and move motors depending on what integer I sent it, I then had my laptop using good old .NET sending it data via serial.</p>
+  </div>
+  <div class="col-md-6">
+    <p>Using .NET allowed me to build an API on <a href="http://azure.microsoft.com/en-gb/" target="_blank">Microsoft Azure</a> which takes in requests and send them to my laptop. The commands were then sent to the Arduino which understood the commands and made the appropriate motors move.</p>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>The Morning of Stupid Ideas</h1>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/pzNgpV" target="_blank"><img src="https://farm4.staticflickr.com/3948/15478677031_d6b8062e19_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/pfSCrY" target="_blank"><img src="https://farm4.staticflickr.com/3930/15264514818_f850653909_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <p>During the night <a href="https://twitter.com/dizzeehaskell" target="_blank">Laurence</a> kept playing the annoying beginning to the song <a href="https://www.youtube.com/watch?v=HMUDVMiITOU" target="_blank">Turn Down for What</a> which I decided to convert into a Chrome extension which would allow him to play it with one click instead of visiting YouTube every time. I used a simple YouTube to mp3 converter and cropped the audio to play just the main beginning of the song. It was hilariously stupid.</p>
+  </div>
+  <div class="col-md-6">
+    <p>The idea now was to use <a href="https://www.twilio.com/" target="_blank">Twilio</a> to get the audience to vote on driving my robot into one of two bananas’ using the <a href="http://www.makeymakey.com/" target="_blank">MakeyMakey kit</a>. Once either banana was hit Laurence’s Chrome extension would open and play the stupid soundtrack. Alex built the amazing MakeyMakey and banana part using his lego kit and Eric returned after the night after building his Twilio voting system.</p>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>Conclusion</h1>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <center>
+      <blockquote class="twitter-tweet" lang="en"><p>About to present our hack using <a href="https://twitter.com/twilio">@Twilio</a>, <a href="https://twitter.com/arduino">@Arduino</a> robot, a banana, a <a href="https://twitter.com/makeymakey">@MakeyMakey</a> and a Laurence <a href="https://twitter.com/hashtag/MLHhack?src=hash">#MLHhack</a> <a href="https://twitter.com/hashtag/MLHLaunch?src=hash">#MLHLaunch</a> <a href="https://t.co/5IROphHoo8">https://t.co/5IROphHoo8</a></p>&mdash; Manoj Nathwani (@Man0jN) <a href="https://twitter.com/Man0jN/status/518755197288329218">October 5, 2014</a></blockquote>
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </center>
+  </div>
+  <div class="col-md-6">
+    <p>Building such a complex and fragile hack, we knew things wouln't work out perfectly so we made a quick vine showing a best-case-senario as a backup.</p>
+    <p>The hack was very far from perfect; for starters as I super-glued my wheels onto the robot it wouldn’t move in a predictable manor. As it moved it wobbled which gave it a lot of character and would hilariously charge into the bananas uncontrollably, this meant that our perfectly working (and impressively made) Twilio integration didn’t have much control over the robot.</p>
+    <p>These are what hackathons are all about though; showing off something awesome which we’ve all just learnt in a ‘sort of’ working manor. <b>We showed off everything we made and as expected it fell apart as the crowed confusingly wondered why they were texting a robot to crash into a banana which shows Laurence’s face as it plays music in a Chrome extension. Perfect!</b></p>
+    <p>The most impressive part was how we all learnt something completly new; <a href="https://twitter.com/VolpTech" target="_blank">Eric</a> had never used Twilio before and pretty much mastered it. <a href="https://twitter.com/alexp_1" target="_blank">Alex</a> had never been to a hackathon before and managed to make a lego structure which dangled bananas which kicks off a circut. As for myself; I went out to try out my first ever hardware hack and although it really was a rollar-coaster ride, it worked out amazingly and I learnt a TON!</p>
+    <h4>Mission Accomplished.</h4>
+    <h4>Bring on the next MLH!</h4>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>Gallery</h1>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pvjKB1" target="_blank"><img src="https://farm4.staticflickr.com/3927/15428042746_dd9a1166f9_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfRLnv" target="_blank"><img src="https://farm3.staticflickr.com/2948/15264346359_48d4ee6e6e_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfS7DU" target="_blank"><img src="https://farm3.staticflickr.com/2948/15264414590_e8a1364852_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/px5Pni" target="_blank"><img src="https://farm4.staticflickr.com/3930/15447956831_a3e30a75a5_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfSAjS" target="_blank"><img src="https://farm6.staticflickr.com/5600/15264507678_59e34e7242_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfS7hw" target="_blank"><img src="https://farm6.staticflickr.com/5598/15264413350_19eb1aff0d_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfS75C" target="_blank"><img src="https://farm6.staticflickr.com/5598/15264412660_ea681c72d9_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfRNSv" target="_blank"><img src="https://farm3.staticflickr.com/2950/15264354769_2f62a30bb0_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfRNNn" target="_blank"><img src="https://farm3.staticflickr.com/2946/15264354529_fee19d813e_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfSCTj" target="_blank"><img src="https://farm6.staticflickr.com/5601/15264516288_eee3e945c9_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pxn5f6" target="_blank"><img src="https://farm4.staticflickr.com/3934/15451128665_cdf6028010_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/px5RCF" target="_blank"><img src="https://farm6.staticflickr.com/5601/15447964451_cac0d9bdb8_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfRNxH" target="_blank"><img src="https://farm6.staticflickr.com/5598/15264353679_112d14c649_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfRNnH" target="_blank"><img src="https://farm6.staticflickr.com/5599/15264353099_e2b3e7cb50_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfS9Qs" target="_blank"><img src="https://farm4.staticflickr.com/3935/15264421930_c49e72877b_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfRMcr" target="_blank"><img src="https://farm6.staticflickr.com/5601/15264349139_1511da62c7_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pvjLfW" target="_blank"><img src="https://farm4.staticflickr.com/3935/15428044946_d1f08c6cd8_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pfRM5T" target="_blank"><img src="https://farm4.staticflickr.com/3928/15264348759_45f9c42b7e_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/pxn3fz" target="_blank"><img src="https://farm3.staticflickr.com/2948/15451121965_714884bb0e_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/px5PHi" target="_blank"><img src="https://farm6.staticflickr.com/5599/15447957991_34642deb0e_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/pvZNyA" target="_blank"><img src="https://farm4.staticflickr.com/3927/15435662066_7d0e77fa27_b.jpg" /></a>
+  </div>
+  <div class="col-md-6">
+    <a href="https://flic.kr/p/pgwYJg" target="_blank"><img src="https://farm6.staticflickr.com/5598/15271997299_1d3fe1a5c5_b.jpg" /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/py3bQx" target="_blank"><img src="https://farm4.staticflickr.com/3927/15458760215_c2f52ce1b9_b.jpg"  /></a>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="https://flic.kr/p/pjhfNv" target="_blank"><img src="https://farm3.staticflickr.com/2945/15303074177_310814821f_b.jpg" /></a>
+  </div>
+</div>
