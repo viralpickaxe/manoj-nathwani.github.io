@@ -1,6 +1,6 @@
-<div class="list-group">
+<div class="list-group {% if include.location == "bottom" %}hidden{% endif %}">
   <div class="list-group-item">
-    <div class="my-image">
+    <div class="my-image hidden-sm">
       <img src="\images/manoj.jpg" />
     </div>
     <span class="my-name">Manoj Nathwani</span>
@@ -10,13 +10,17 @@
   <a href="/projects" class="list-group-item ">Projects<span class="badge pull-right"></span></a>
 </div>
 
-<div class="list-group">
+<div class="list-group {% if include.location == "bottom" %}hidden{% endif %}">
   <a href="/resume" class="list-group-item ">Resume<span class="badge pull-right"></span></a>
 </div>
 
-<div class="list-group">
+<div class="list-group {% if include.location == "top" %}hidden-xs{% else %}hidden-md{% endif %}">
   <span class="list-group-item "><b>Social</b></span>
   {% for x in site.data.social %}
   <a class="list-group-item" href="{{ x.link }}" target="_blank"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-{{ x.name | downcase}} fa-stack-1x fa-inverse fa-fw"></i></span>{{ x.name }}</a>
   {% endfor %}
 </div>
+
+<ul class="list-group {% if include.location == "top" %}hidden-xs{% else %}hidden-md{% endif %}">
+  <li class="list-group-item">All design and content &#169; Manoj Nathwani unless otherwise stated.</li>
+</ul>

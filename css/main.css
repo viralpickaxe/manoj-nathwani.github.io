@@ -137,7 +137,7 @@ input, button {
   padding-bottom: 4px;
 }
 .thumbnail > img, .thumbnail a > img {
-  /*min-height: 260px;*/
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  width: 100%;
 }
