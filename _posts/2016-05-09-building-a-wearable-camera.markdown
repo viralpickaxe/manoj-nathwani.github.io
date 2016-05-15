@@ -5,7 +5,7 @@ title: Building a wearable camera
 image: https://farm8.staticflickr.com/7223/26909712545_9590e9eca3_z.jpg
 description: How I built a wearable timelapse camera to take on holiday
 ---
-Recently I worked on a side project where I built a wearable camera out of a Rasperry Pi. I had previously bought a [Narrative Clip](http://getnarrative.com) and was disappointed by poor quality and knew hacking together my own solution was possible. I was also about to go on a holiday where I would be traveling to 4 countries in 5 days, so the timing was perfect.
+Recently I worked on a side project where I built a wearable camera out of a Rasperry Pi. I had previously bought a [Narrative Clip](http://getnarrative.com) and was a little disappointed by quality and knew hacking together my own solution could be possible. I was also about to go on a holiday where I would be traveling to 4 countries in 5 days, so the timing was perfect.
 
 ![Camera](https://farm8.staticflickr.com/7223/26909712545_9590e9eca3_b.jpg)
 
