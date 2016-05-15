@@ -10,7 +10,6 @@ body, h3 {
 
 p {
   margin-bottom: 10px;
-  font-size: larger;
 }
 
 .alert {
@@ -87,45 +86,10 @@ input, button {
   background-color: white;
 }
 
-.panel-heading h3 {
-  padding-bottom: 10px;
-}
-
-.panel-heading p {
-  display: block;
-  font-size: small;
-}
-
-
-.panel-heading p i {
-  margin-left: 15px;
-  margin-right: 3px;
-}
-
-.panel-heading p i:first-of-type {
-  margin-left: 0;
-}
-
-.panel-heading p {
-  margin: 0;
-}
-
-
-/* content_DebugCheckBox */
-#content_DebugCheckBox {
-  position: absolute;
-  top: 0;
-  left: 10px;
-  font-size: xx-large;
-  text-align: center;
-}
-
-#content_DebugCheckBox p {
-  margin: 0;
-}
-
-#content_DebugCheckBox a {
-  color: #E0DFDF;
+@media (min-width: 1000px) {
+  .panel p {
+    font-size: larger;
+  }
 }
 
 .carousel-control {
